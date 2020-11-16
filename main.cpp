@@ -56,10 +56,6 @@ void hexNumber::exchange() {
 		fileOut.close();
 };
 
-void hexNumber::zapis() {
-	
-};
-
 int main(int argc, char** argv) {
 	hexNumber hex("C:\\od.txt");
 	hex.exchange();
