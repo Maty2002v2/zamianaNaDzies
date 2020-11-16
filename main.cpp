@@ -50,8 +50,8 @@ void hexNumber::exchange() {
         			default:
 						fileOut<<"cos poszlo nie tak"<<endl;
 					 break;
-					}
 				}
+			}
 		file.close();
 		fileOut.close();
 };
