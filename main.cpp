@@ -22,7 +22,6 @@ class hexNumber {
 		}
 		
 		void exchange();
-		void zapis();
 };
 
 void hexNumber::exchange() {
