@@ -11,8 +11,8 @@ class hexNumber {
 	public:
 		
 		ifstream file;
+		ofstream fileOut;
   		char* endptr;
-  		ofstream fileOut;
   		string nazwa;
   		string liczba2;
   		int zamieniona, system;
@@ -27,6 +27,7 @@ class hexNumber {
 
 void hexNumber::exchange() {
 	file.open(this->nazwa.c_str());
+	fileOut.open("c:\\lol.txt");
   
   		if(file.good())
      		while (!file.eof()) {
@@ -36,23 +37,24 @@ void hexNumber::exchange() {
         			
         		switch(system) {
         			case 2:
-        				cout<<"Liczba "<<liczba2<<" w systemie dwujkowym to "<<zamieniona<<" w sysyemie dziesietnym."<<endl;
+        				fileOut<<"Liczba "<<liczba2<<" w systemie dwujkowym to "<<zamieniona<<" w sysyemie dziesietnym."<<endl;
         			 break;
         				case 8:
-        				cout<<"Liczba "<<liczba2<<" w systemie osemkowym to "<<zamieniona<<" w sysyemie dziesietnym."<<endl;
+        				fileOut<<"Liczba "<<liczba2<<" w systemie osemkowym to "<<zamieniona<<" w sysyemie dziesietnym."<<endl;
         			 break;
         			case 10:
-        				cout<<"Liczba "<<liczba2<<" nie zmiennie jest w systemie dziesietnym"<<endl;
+        				fileOut<<"Liczba "<<liczba2<<" nie zmiennie jest w systemie dziesietnym"<<endl;
         			 break;
         			case 16:
-        				cout<<"Liczba "<<liczba2<<" w systemie szesnastkowym to "<<zamieniona<<" w sysyemie dziesietnym."<<endl;
+        				fileOut<<"Liczba "<<liczba2<<" w systemie szesnastkowym to "<<zamieniona<<" w sysyemie dziesietnym."<<endl;
         			break;
         			default:
-						cout<<"cos poszlo nie tak"<<endl;
+						fileOut<<"cos poszlo nie tak"<<endl;
 					 break;
 					}
 				}
 		file.close();
+		fileOut.close();
 };
 
 void hexNumber::zapis() {
